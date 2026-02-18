@@ -1,0 +1,5 @@
+{
+  "name": "Dronetribes",
+  "description": "A comprehensive Customer Relationship Management (CRM) application designed to streamline sales, pipeline, and task management. It features a dashboard with key metrics, lead and task management, a visual Kanban pipeline, reporting analytics, and user administration.",
+  "requestFramePermissions": []
+}
