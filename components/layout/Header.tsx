@@ -7,9 +7,10 @@ import { User } from '../../types';
 
 interface HeaderProps {
   onLogout: () => void;
+  toggleSidebar: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onLogout }) => {
+const Header: React.FC<HeaderProps> = ({ onLogout, toggleSidebar }) => {
   const { currentUser, updateCurrentUser } = useCrm();
   const { addToast } = useToast();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -55,8 +56,14 @@ const Header: React.FC<HeaderProps> = ({ onLogout }) => {
 
   return (
     <>
-      <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-end px-6">
-        <div className="flex items-center gap-4">
+      <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6">
+        <button
+          onClick={toggleSidebar}
+          className="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none"
+        >
+          {ICONS.menu}
+        </button>
+        <div className="flex items-center gap-4 ml-auto">
           <button onClick={openModal} className="flex items-center gap-2 group">
             <img src={currentUser.avatar} alt={currentUser.name} className="w-9 h-9 rounded-full ring-2 ring-offset-2 ring-transparent group-hover:ring-primary-300 transition-all" />
             <div className="text-left hidden sm:block">

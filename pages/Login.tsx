@@ -3,8 +3,8 @@ import Button from '../components/ui/Button';
 import { supabase } from '../supabase';
 
 const Login: React.FC = () => {
-  const [email, setEmail] = useState('mathankumar@dronetribes.com');
-  const [password, setPassword] = useState('mathan@123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
